@@ -50,6 +50,11 @@
             <id>datanucleus</id>
             <url>http://www.datanucleus.org/downloads/maven2</url>
         </pluginRepository>
+        <pluginRepository>
+            <id>scala-tools.org</id>
+            <name>Scala-tools Maven2 Repository</name>
+            <url>http://scala-tools.org/repo-releases</url>
+        </pluginRepository>
     </pluginRepositories>
     
     <repositories>
@@ -68,6 +73,11 @@
         <repository>
             <id>ocpsoft.com</id>
             <url>http://ocpsoft.com/repository/</url>
+        </repository>
+        <repository>
+            <id>scala-tools.org</id>
+            <name>Scala-tools Maven2 Repository</name>
+            <url>http://scala-tools.org/repo-releases</url>
         </repository>
     </repositories>
     
