@@ -32,6 +32,4 @@ public interface Message {
 
 	QueueSpeed getSpeed();
 	
-	String getCommandClassName();
-	
 }

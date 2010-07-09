@@ -164,7 +164,7 @@ public class SiteFilter extends AbstractFilter implements Filter {
     	String content = getBusiness().getPageBusiness().render(page, language);
     	out.write(content);
     	if (!isLoggedIn(request) && page.isCached()) {
-    		getSystemService().getPageCache().put(page.getFriendlyURL(),
+    		getSystemService().getPageCache().put(page.getFriendlyURL(), 
     				language, content);
     	}
     }

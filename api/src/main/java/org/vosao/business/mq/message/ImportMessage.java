@@ -96,4 +96,5 @@ public class ImportMessage extends AbstractMessage {
 		return fileCounter;
 	}
 	
+	
 }

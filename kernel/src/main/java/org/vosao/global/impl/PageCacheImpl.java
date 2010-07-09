@@ -62,7 +62,7 @@ public class PageCacheImpl implements PageCache {
 	private static final Log logger = LogFactory.getLog(PageCacheImpl.class);
 
 	private String getPageKey(String url, String language) {
-		return "page:" + url + ":" + language;
+		return "page:" + url + language;
 	}
 	
 	private CacheService getCache() {

@@ -206,19 +206,12 @@ public class ResourceExporterImpl extends AbstractExporter
 		permissionElement.addElement("permissionType").setText(
 				permission.getPermission().name());
 	}
-
-	@Override
+	
 	public String importResourceFile(final ZipEntry entry, byte[] data)
 			throws UnsupportedEncodingException, DaoTaskException {
-		return importResourceFile("/" + entry.getName(), data);
-	}
-	
-	@Override
-	public String importResourceFile(String name, byte[] data)
-			throws UnsupportedEncodingException, DaoTaskException {
 
-		String folderPath = FolderUtil.getFilePath(name);
-		String fileName = FolderUtil.getFileName(name);
+		String folderPath = FolderUtil.getFilePath(entry);
+		String fileName = FolderUtil.getFileName("/" + entry.getName());
 		//logger.debug("importResourceFile: " + folderPath + " " + fileName + " "
 		//		+ data.length);
 		FolderEntity folderEntity = getBusiness().getFolderBusiness()
@@ -236,7 +229,7 @@ public class ResourceExporterImpl extends AbstractExporter
 					.getId(), contentType, new Date(), data.length);
 		}
 		getDaoTaskAdapter().fileSave(fileEntity, data);
-		return name;
+		return "/" + entry.getName();
 	}
 	
 	private PageExporter getPageExporter() {
@@ -273,6 +266,5 @@ public class ResourceExporterImpl extends AbstractExporter
 					folder, group, permission);
 		}
 	}
-
 	
 }

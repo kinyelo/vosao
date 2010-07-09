@@ -36,11 +36,6 @@ import org.vosao.entity.PageEntity;
 import org.vosao.utils.EmailUtil;
 import org.vosao.utils.StrUtil;
 
-/**
- * 
- * @author Alexander Oleynik
- *
- */
 public class CommentBusinessImpl extends AbstractBusinessImpl 
 	implements CommentBusiness {
 
@@ -117,7 +112,7 @@ public class CommentBusinessImpl extends AbstractBusinessImpl
 			getDao().getCommentDao().remove(ids);
 		}		
 	}
-
+	
 	private void clearPageCache(List<Long> commentIds) {
 		for(Long id : commentIds) {
 			CommentEntity comment = getDao().getCommentDao().getById(id);

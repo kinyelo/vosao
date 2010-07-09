@@ -75,9 +75,6 @@ public interface ResourceExporter {
 	String importResourceFile(final ZipEntry entry, byte[] data)
 			throws UnsupportedEncodingException, DaoTaskException;
 	
-	String importResourceFile(String name, byte[] data)
-			throws UnsupportedEncodingException, DaoTaskException;
-
 	/**
 	 * Read and import data from _folder.xml file.
 	 * @param folderPath - folder path.

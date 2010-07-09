@@ -84,9 +84,7 @@ public abstract class AbstractPageFilter implements PageFilter {
 	public String applyTag(String content, PageEntity page, String tag) {
 		StringBuffer buffer = new StringBuffer(content);
 		int index = findTagInsertPosition(tag, buffer);
-		if (index > 0) {
-			buffer.insert(index, getFragmentsContent(page));
-		}
+		buffer.insert(index, getFragmentsContent(page));
 		return buffer.toString();
 	}
 	

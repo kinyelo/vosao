@@ -34,7 +34,6 @@ import org.vosao.business.impl.imex.task.DaoTaskTimeoutException;
 import org.vosao.business.impl.mq.AbstractSubscriber;
 import org.vosao.business.mq.Message;
 import org.vosao.business.mq.message.ImportMessage;
-import org.vosao.common.RequestTimeoutException;
 import org.vosao.common.UploadException;
 import org.vosao.common.VosaoContext;
 import org.vosao.entity.helper.UserHelper;
@@ -60,8 +59,7 @@ public class ImportTaskSubscriber extends AbstractSubscriber {
 				doImport1(msg);
 			}
 			if (ext.equals("vz")) {
-				//doImport2(msg);
-				doImport3(msg);
+				doImport2(msg);
 			}
 		}
 		catch (IOException e) {
@@ -171,24 +169,4 @@ public class ImportTaskSubscriber extends AbstractSubscriber {
 		}
 	}
 
-	public void doImport3(ImportMessage msg) 
-			throws ServletException, IOException {
-		byte[] data = getSystemService().getCache().getBlob(msg.getFilename());
-		if (data == null) {
-			logger.error("Imported file not found in memcache. " 
-					+ msg.getFilename());
-			return;
-		}
-		ByteArrayInputStream inputData = new ByteArrayInputStream(data);
-		ZipInputStream in = new ZipInputStream(inputData);
-		try {
-			getImportExportBusiness().importUnzip(in, msg.getCurrentFile());
-		}
-		catch (RequestTimeoutException e) {
-			getBusiness().getMessageQueue().publish(new ImportMessage(
-					msg.getFilename(), 0, e.getMessage(), 0));
-		}
-		in.close();
-	}	
-	
 }

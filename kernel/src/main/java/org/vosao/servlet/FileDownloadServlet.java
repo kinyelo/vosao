@@ -46,6 +46,8 @@ import org.vosao.utils.FolderUtil;
  */
 public class FileDownloadServlet extends AbstractServlet {
 	
+	private static final long CACHE_LIMIT = 1048000;
+	
 	private static final long serialVersionUID = 6098745782027999297L;
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -85,7 +87,7 @@ public class FileDownloadServlet extends AbstractServlet {
 				folder.getEntity().getId(), filename);
 		if (file != null) {
 			byte[] content = getDao().getFileDao().getFileContent(file);
-			if (file.getSize() < CacheService.MEMCACHE_LIMIT) {
+			if (file.getSize() < CACHE_LIMIT) {
 				getSystemService().getFileCache().put(request.getPathInfo(), 
 						new FileCacheItem(file, content, 
 								VosaoContext.getInstance().getUser() == null));

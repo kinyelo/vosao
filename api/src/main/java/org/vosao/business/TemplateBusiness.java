@@ -37,5 +37,4 @@ public interface TemplateBusiness {
 	List<String> remove(List<Long> ids);
 	
 	public TemplateEntity save(TemplateEntity template);
-
 }

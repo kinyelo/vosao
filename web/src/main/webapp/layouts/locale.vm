@@ -23,5 +23,4 @@
 <div id="languageDiv">
     <a href="#" onclick="Vosao.changeLanguage('en')">English</a>
     <a href="#" onclick="Vosao.changeLanguage('ru')">Русский</a>
-    <a href="#" onclick="Vosao.changeLanguage('ja')">日本語</a>
 </div>

@@ -95,5 +95,5 @@ public class TemplateBusinessImpl extends AbstractBusinessImpl
 		}
 		return getDao().getTemplateDao().save(template);
 	}
-
+	
 }

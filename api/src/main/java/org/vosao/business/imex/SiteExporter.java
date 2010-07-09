@@ -45,9 +45,5 @@ public interface SiteExporter {
 	boolean importSystemFile(ZipEntry entry, ByteArrayOutputStream data) 
 			throws DocumentException, DaoTaskException, 
 			UnsupportedEncodingException;
-
-	boolean importSystemFile(String name, String xml) 
-			throws DocumentException, DaoTaskException, 
-			UnsupportedEncodingException;
-
+	
 }

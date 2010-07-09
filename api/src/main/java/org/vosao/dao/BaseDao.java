@@ -52,5 +52,4 @@ public interface BaseDao<T extends BaseEntity>
 	
 	void clearCache();
 
-	int count();
 }

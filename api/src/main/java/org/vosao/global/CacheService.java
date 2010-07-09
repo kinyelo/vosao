@@ -32,8 +32,6 @@ import javax.cache.Cache;
  */
 public interface CacheService extends Cache {
 
-	public static final int MEMCACHE_LIMIT = 1048000;
-
 	void resetLocalCache();
 	
 	int getLocalHits();
