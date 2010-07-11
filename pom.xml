@@ -2,76 +2,71 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.vosao</groupId>
-    <artifactId>vosaocms</artifactId>
-    <version>0.7</version>
-    <packaging>pom</packaging>   
-    <name>Vosao CMS</name>
-    <url>http://www.vosao.org</url>
-    <description>Vosao CMS for Google App Engine</description>
+    <groupId>org.mapsto</groupId>
+    <artifactId>mapsto</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <name>Mapsto map-like data storage</name>
+    
+    <dependencies>
+		<!-- unit tests -->
+	
+		<dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+		</dependency>
+            
+        <!-- Apache commons -->
 
-    <issueManagement>
-        <system>Google Code</system>
-        <url>http://code.google.com/p/vosao/issues/list</url>
-    </issueManagement>
-    
-    <developers>
-        <developer>
-            <id>oleynik</id>
-            <name>Alex</name>
-            <email>kinyelo@gmail.com</email>
-            <roles>
-                <role>Java Developer</role>
-                <role>Architect</role>
-            </roles>
-            <organization>portalteam.net</organization>
-            <timezone>+2</timezone>
-        </developer>
-        <developer>
-            <id>yuri</id>
-            <name>Yuri</name>
-            <email>yuri.voloshenyuk@gmail.com</email>
-            <roles>
-                <role>Java Developer</role>
-            </roles>
-            <organization>portalteam.net</organization>
-            <timezone>+2</timezone>
-        </developer>
-    </developers>
-        
-    <scm>
-        <connection>scm:svn:http://vosao.googlecode.com/svn/trunk/</connection>
-        <developerConnection>scm:svn:https://vosao.googlecode.com/svn/trunk/</developerConnection>
-        <url>http://code.google.com/p/vosao/source/browse/</url>
-    </scm>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.4</version>
+        </dependency>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>datanucleus</id>
-            <url>http://www.datanucleus.org/downloads/maven2</url>
-        </pluginRepository>
-    </pluginRepositories>
-    
-    <repositories>
-        <repository>
-            <id>vosao-maven-repo</id>
-            <url>http://vosao.googlecode.com/svn/repository</url>
-        </repository>
-        <repository>
-            <id>mvnsearch</id>
-            <url>http://www.mvnsearch.org/maven2</url>
-        </repository>
-        <repository>
-            <id>datanucleus</id>
-            <url>http://www.datanucleus.org/downloads/maven2</url>
-        </repository>
-    </repositories>
-    
-    <modules>
-        <module>api</module>
-        <module>kernel</module>
-        <module>web</module>
-    </modules>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.8.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils-core</artifactId>
+            <version>1.8.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils-bean-collections</artifactId>
+            <version>1.8.2</version>
+        </dependency>
+
+    </dependencies>
+
+    <properties>
+        <project_charset>UTF-8</project_charset>
+    </properties>
+
+    <!-- Build Settings -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     
     <reporting>
         <plugins>
